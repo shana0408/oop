@@ -44,6 +44,9 @@ public class CourseRegistrationMarkEntry
 		sc = new Scanner(System.in);
 	}
 
+
+
+
 	/**
 	 * initialize all data from cvs
 	 */
@@ -111,6 +114,17 @@ public class CourseRegistrationMarkEntry
 	}
 
 	/**
+	 * view staff list
+	 */
+	protected void viewStaff()
+	{
+		System.out.println("Staff List:");
+		for(Staff staff : staffs) {
+			System.out.println(staff.toString());
+		}
+	}
+
+	/**
 	 * add staff
 	 */
 	protected void addStaff()
@@ -147,6 +161,17 @@ public class CourseRegistrationMarkEntry
 		System.out.println(staff.toString());
 		staffs.add(staff);
 		System.out.println("Staff addded successful");
+	}
+
+	/**
+	 * view student
+	 */
+	protected void viewStudent()
+	{
+		System.out.println("Student List:");
+		for(Student student : students) {
+			System.out.println(student.toString());
+		}
 	}
 
 	/**
@@ -208,6 +233,17 @@ public class CourseRegistrationMarkEntry
 		System.out.println(module.toString());
 		modules.add(module);
 		System.out.println("Module added successful");
+	}
+
+	/**
+	 * view module
+	 */
+	protected void viewModule()
+	{
+		System.out.println("Module List:");
+		for(Module module : modules) {
+			System.out.println(module.toString());
+		}
 	}
 
 	/**
@@ -347,6 +383,17 @@ public class CourseRegistrationMarkEntry
 		System.out.println(course.toString());
 		courses.add(course);
 		System.out.println("Course added successful");
+	}
+
+	/**
+	 * view course
+	 */
+	protected void viewCourse()
+	{
+		System.out.println("Course List:");
+		for(Course course : courses) {
+			System.out.println(course.toString());
+		}
 	}
 
 	/**
