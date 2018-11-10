@@ -5,21 +5,48 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ Brain of this application. All logic is here.
+ @author 4 Friends and Yoong Wei
+ @version 2.1
+ @since 2018-10-1
+ */
 public class CourseRegistrationMarkEntry
 {
+	/**
+	 * students
+	 */
 	private ArrayList<Student> students;
+	/**
+	 * staffs
+	 */
 	private ArrayList<Staff> staffs;
+	/**
+	 * modules
+	 */
 	private ArrayList<Module> modules;
+	/**
+	 * courses
+	 */
 	private ArrayList<Course> courses;
-	
+	/**
+	 * just a scanner. what did u expect?
+	 */
 	private Scanner sc;
-	
+
+	/**
+	 * Create a course registration app by initialize all data from cvs first.
+	 * After that, admin is able to enter whatever they wanted to do.
+	 */
 	public CourseRegistrationMarkEntry()
 	{
 		initiate();
 		sc = new Scanner(System.in);
 	}
 
+	/**
+	 * initialize all data from cvs
+	 */
 	private void initiate()
 	{
 		FileReader fileReader;
@@ -83,6 +110,9 @@ public class CourseRegistrationMarkEntry
 		}
 	}
 
+	/**
+	 * add staff
+	 */
 	protected void addStaff()
 	{
 		String staffId;
@@ -119,6 +149,9 @@ public class CourseRegistrationMarkEntry
 		System.out.println("Staff addded successful");
 	}
 
+	/**
+	 * add student
+	 */
 	protected void addStudent()
 	{
 		String studentId;
@@ -151,6 +184,9 @@ public class CourseRegistrationMarkEntry
 		System.out.println("Student addded successful");
 	}
 
+	/**
+	 * add module
+	 */
 	protected void addModule()
 	{
 		String moduleId;
@@ -174,6 +210,9 @@ public class CourseRegistrationMarkEntry
 		System.out.println("Module added successful");
 	}
 
+	/**
+	 * add course
+	 */
 	protected void addCourse()
 	{
 		Module module;
@@ -310,6 +349,9 @@ public class CourseRegistrationMarkEntry
 		System.out.println("Course added successful");
 	}
 
+	/**
+	 * register student to a course
+	 */
 	protected void registerStudentToCourse()
 	{
 		String studentId;
@@ -417,6 +459,9 @@ public class CourseRegistrationMarkEntry
 		System.out.println("Registered Successful");
 	}
 
+	/**
+	 * check available slot in class
+	 */
 	protected void checkAvailableSlotInClass()
 	{
 		String moduleId;
@@ -453,6 +498,9 @@ public class CourseRegistrationMarkEntry
 		}
 	}
 
+	/**
+	 * print student list from current session
+	 */
 	protected void printStudentListFromSession()
 	{
 		String moduleId;
@@ -511,6 +559,9 @@ public class CourseRegistrationMarkEntry
 		}
 	}
 
+	/**
+	 * enter course assessment weightage
+	 */
 	protected void enterCourseAssessmentWeightage()
 	{
 		String moduleId;
@@ -554,6 +605,9 @@ public class CourseRegistrationMarkEntry
 		System.out.println("Course grading weightage saved");
 	}
 
+	/**
+	 * enter student coursework mark
+	 */
 	protected void enterStudentCourseworkMark()
 	{
 		String studentId;
@@ -595,7 +649,10 @@ public class CourseRegistrationMarkEntry
 		System.out.println(studentCourse.toString());
 		System.out.println("Saved Successful");
 	}
-	
+
+	/**
+	 * enter student exam mark
+	 */
 	protected void enterStudentExamMark()
 	{
 		String studentId;
@@ -637,7 +694,10 @@ public class CourseRegistrationMarkEntry
 		System.out.println(studentCourse.toString());
 		System.out.println("Saved Successful");
 	}
-	
+
+	/**
+	 * print course statistics
+	 */
 	protected void printCourseStatistics()
 	{
 		String moduleId;
@@ -679,7 +739,10 @@ public class CourseRegistrationMarkEntry
 		System.out.println("Overall (Exam Only) [" + totalExam / course.getLecture().getStudentsId().size() + "]");
 		System.out.println("Overall (Coursework Only) [" + totalCoursework / course.getLecture().getStudentsId().size() + "]");
 	}
-	
+
+	/**
+	 * print student transcript
+	 */
 	protected void printStudentTranscript()
 	{
 		float cgpa = 0;
@@ -726,6 +789,11 @@ public class CourseRegistrationMarkEntry
 		
 	}
 
+	/**
+	 * search student by its id
+	 * @param studentId student's id.
+	 * @return the student u want .
+	 */
 	private Student searchForStudentById(String studentId)
 	{
 		for (Student student : students)
@@ -739,6 +807,11 @@ public class CourseRegistrationMarkEntry
 		return null;
 	}
 
+	/**
+	 * search module by its id
+	 * @param moduleId module id
+	 * @return the module u want.
+	 */
 	private Module searchForModuleById(String moduleId)
 	{
 		for (Module module : modules)
@@ -752,6 +825,11 @@ public class CourseRegistrationMarkEntry
 		return null;
 	}
 
+	/**
+	 * search staff by its id
+	 * @param staffId staff's id.
+	 * @return the staff u want.
+	 */
 	private Staff searchForStaffById(String staffId)
 	{
 		for (Staff staff : staffs)
@@ -765,6 +843,13 @@ public class CourseRegistrationMarkEntry
 		return null;
 	}
 
+	/**
+	 * search course by id , year and sem
+	 * @param moduleId module id.
+	 * @param year which year.
+	 * @param semester which sem.
+	 * @return the course you want.
+	 */
 	private Course searchForCourseByIdYearSem(String moduleId, int year, int semester)
 	{
 		for (Course course : courses)
@@ -777,7 +862,12 @@ public class CourseRegistrationMarkEntry
 
 		return null;
 	}
-	
+
+	/**
+	 * search course by its id
+	 * @param courseId course Id.
+	 * @return the course you want.
+	 */
 	private Course searchForCourseById(String courseId)
 	{
 		for (Course course : courses)
@@ -791,6 +881,12 @@ public class CourseRegistrationMarkEntry
 		return null;
 	}
 
+	/**
+	 * search group from group list by its id
+	 * @param groupId group id.
+	 * @param groupList group list
+	 * @return the group you want.
+	 */
 	private Group searchForGroupById(String groupId, ArrayList<Group> groupList)
 	{
 		for (Group group : groupList)
@@ -803,7 +899,12 @@ public class CourseRegistrationMarkEntry
 
 		return null;
 	}
-	
+
+	/**
+	 * convert mark to gpa
+	 * @param marks marks after calculate its coursework's weightage and exam's weightage.
+	 * @return the student's GPA.
+	 */
 	private float marksToGPA(float marks)
 	{
 		if (marks >= 80)

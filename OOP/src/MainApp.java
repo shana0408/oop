@@ -1,7 +1,18 @@
 import java.util.Scanner;
+/**
+ User interface for admin to perform course registration
+ @author 4 Friends and Yoong Wei
+ @version 2.1
+ @since 2018-10-1
+ */
+
 
 public class MainApp
 {
+    /**
+     * Java main method is the entry point of any java program.
+     * @param args In Java args contains the supplied command-line arguments as an array of String objects..
+     */
 	public static void main(String[] args)
 	{
 		CourseRegistrationMarkEntry app = new CourseRegistrationMarkEntry();
@@ -60,7 +71,9 @@ public class MainApp
 		
 		System.out.println("Exit");
 	}
-	
+    /**
+     * A menu
+     */
 	private static void printMenu()
 	{
 		System.out.println("");
@@ -72,7 +85,7 @@ public class MainApp
 		System.out.println("6.  Check available slot in a class (vacancy in a class).");
 		System.out.println("7.  Print student list by lecture, tutorial or laboratory session for a course.");
 		System.out.println("8.  Enter course assessment components weightage.");
-		System.out.println("9.  Enter coursework mark – inclusive of its components.");
+		System.out.println("9.  Enter coursework mark ï¿½ inclusive of its components.");
 		System.out.println("10. Enter exam mark.");
 		System.out.println("11. Print course statistics.");
 		System.out.println("12. Print student transcript.");
