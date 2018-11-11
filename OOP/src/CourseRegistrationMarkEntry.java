@@ -148,8 +148,17 @@ public class CourseRegistrationMarkEntry
 		name = sc.nextLine();
 
 		System.out.println("Enter Staff Age: ");
-		age = sc.nextInt();
-		sc.nextLine();
+		try 
+		{
+			age = sc.nextInt();
+			sc.nextLine();
+		} 
+		catch (java.util.InputMismatchException e) 
+		{
+			sc.nextLine();
+			System.out.println("invalid input for ages.");
+			return;
+		}
 
 		System.out.println("Enter Staff Gender (M/F): ");
 		gender = sc.nextLine().charAt(0);
@@ -197,8 +206,15 @@ public class CourseRegistrationMarkEntry
 		name = sc.nextLine();
 
 		System.out.println("Enter Student Age: ");
-		age = sc.nextInt();
-		sc.nextLine();
+		try 
+		{
+			age = sc.nextInt();
+			sc.nextLine();
+		} catch (java.util.InputMismatchException e) {
+			sc.nextLine();
+			System.out.println("invalid input for ages.");
+			return;
+		}
 
 		System.out.println("Enter Student Gender (M/F): ");
 		gender = sc.nextLine().charAt(0);
