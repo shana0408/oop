@@ -67,10 +67,7 @@ public class CourseRegistrationMarkEntry
 			{
 				String[] splitLine = line.split(",");
 				Course course = new Course(splitLine[0], splitLine[1], splitLine[2], Integer.parseInt(splitLine[3]), Integer.parseInt(splitLine[4]));
-				course.setLecture(new Group(splitLine[0] + "-" + splitLine[3] + "-" + splitLine[4] + "-LT", splitLine[5], splitLine[6], Integer.parseInt(splitLine[7])));
-				course.setHasTutorial(false);
-				course.setHasLaboratory(false);
-				courses.add(course);
+				
 			}
 			
 			br.close();

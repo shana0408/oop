@@ -1,0 +1,11 @@
+moduleID,moduleDescription,staffID(coordinator),year,semester,staffID(lecturer),venus,vacancy
+CZ1003,Introduction to Computational Thinking,1,2017,1,2,TR19,30
+CZ1005,Digital Logic,1,2017,1
+CZ1006,Computer Organisation and Architecture,1,2017,1
+CZ1007,Data Structures,1,2017,2
+CZ1011,Engineering Mathematics I,1,2017,1
+CZ1012,Engineering Mathematics II,1,2017,2
+CZ2001,Algorithms,2,2018,1
+CZ2002,Object Oriented Programming,2,2018,1
+CZ2003,Computer Graphic & Visual,2,2018,1
+CZ2004,Human Computer Interaction,2,2018,1
